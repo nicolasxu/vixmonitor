@@ -18,6 +18,11 @@ public class ShortStraddleHedge {
     public double strikePrice;
     public int futureLongShort = 0; // 1: long, -1 short
     public int interval = 0; // check interval in mikes
+    public double upTolerance = 0; // after a order is filled, resulting from reaching up or down threshold,
+                                   // the following order will not trigger if the price is within
+                                   // upThreshold +   upTolerance and upThreshold -   downTolerance or,
+                                   // downThreshold + upTolerance and downThreshold - downTolerance
+    public double downTolerance = 0;
 
     public Contract contract;
     public Timer timer;
@@ -32,6 +37,11 @@ public class ShortStraddleHedge {
 
         this.interval = interval;
         this.futureLongShort = futureLongShort;
+
+        // Set tolerance value
+        this.upTolerance = 0.2;
+        this.downThreshold = 0.2;
+
         this.handler = new ApiHandler();
 
         // Initialize the contract internally, 2015 Jan VIX Future
@@ -45,6 +55,11 @@ public class ShortStraddleHedge {
         this.contract.m_currency = "USD";
         this.contract.m_multiplier = "1000";
         this.contract.m_tradingClass = "VX";
+
+
+
+        // give handler reference to hedge object, so that handler can update member variables in
+        // hedge object
         this.handler.getHedgeRef(this);
 
 
@@ -65,7 +80,7 @@ public class ShortStraddleHedge {
         logTextArea.append("- starting hedging with upThreshold " + this.upThreshold + " and downThreshold " + this.downThreshold + " at " +
         this.interval + " mikes interval \n");
 
-        logTextArea.append("- Initial future position is: " + futureLongShort);
+        logTextArea.append("- Initial future position is: " + futureLongShort + "\n");
 
 
 
@@ -80,9 +95,8 @@ public class ShortStraddleHedge {
 
                 if(handler.getNextValidOrderId() > 0) {
                     // we are connected
-                    System.out.println("Checking price... " + counter++);
 
-                    System.out.println("handler.m_openOrders.size(): " + handler.m_openOrders.size());
+//                    System.out.println("handler.m_openOrders.size(): " + handler.m_openOrders.size());
 
                     if(receivingPriceFlag == false ) {
                         handler.startReceivingPrice(contract);
@@ -90,8 +104,9 @@ public class ShortStraddleHedge {
                     }
 
                     double lastPrice = handler.getlastPrice();
-//                    System.out.println("The current price is: " + lastPrice);
-                    logTextArea.append("The current price is: " + lastPrice + "\n");
+
+                    logTextArea.append(counter++ + " checking last price: " + lastPrice + ", m_openOrders.size(): " + handler.m_openOrders.size() +
+                            " ,VIX future position: " + futureLongShort + "\n");
                     if(lastPrice > 0) {
                         // last price is ready
                         if (lastPrice > upThreshold) {

@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a7d0a112-049c-48a8-8638-ec39a9246d64" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" afterPath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vixmonitor.iws" />
@@ -69,14 +68,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShortStraddleHedge.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ShortStraddleHedge.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="2445">
-              <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.5188679" vertical-offset="1205" max-vertical-offset="3000">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -95,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65217394" vertical-offset="255" max-vertical-offset="765">
-              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="765">
+              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -137,8 +135,8 @@
         <option value="$PROJECT_DIR$/src/com/monitor/vixform2.jfd" />
         <option value="$PROJECT_DIR$/src/com/monitor/ApiHandler.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
-        <option value="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
       </list>
     </option>
   </component>
@@ -146,8 +144,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="16" />
-    <option name="y" value="41" />
+    <option name="x" value="28" />
+    <option name="y" value="46" />
     <option name="width" value="1440" />
     <option name="height" value="820" />
   </component>
@@ -415,7 +413,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="41" width="1440" height="820" extended-state="0" />
+    <frame x="28" y="46" width="1440" height="820" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -435,7 +433,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20457797" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15164521" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36126372" sideWeight="0.51157224" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -540,7 +538,6 @@
           <caret line="86" column="39" selection-start-line="86" selection-start-column="39" selection-end-line="86" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -600,7 +597,6 @@
           <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -660,7 +656,6 @@
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -710,7 +705,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -760,7 +754,6 @@
           <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -810,7 +803,6 @@
           <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -840,7 +832,6 @@
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -970,22 +961,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="2445">
-          <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#ShortStraddleHedge#0;class#ShortStraddleHedge#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="765">
+          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65217394" vertical-offset="255" max-vertical-offset="765">
-          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
+        <state vertical-scroll-proportion="0.5188679" vertical-offset="1205" max-vertical-offset="3000">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
