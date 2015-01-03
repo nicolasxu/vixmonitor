@@ -34,6 +34,8 @@ node_modules
 #!/www/static/shared/css/shared.css
 #!/www/static/home/css/home.css
 
+/out/production/vixmonitor/com/monitor/*.class
+
 /www/static/bower_components
 
 /out

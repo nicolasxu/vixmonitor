@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7d0a112-049c-48a8-8638-ec39a9246d64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ApiHandler.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ApiHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" afterPath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/vixform2.java" afterPath="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vixmonitor.iws" />
@@ -102,8 +98,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7208238" vertical-offset="255" max-vertical-offset="735">
-              <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.65217394" vertical-offset="255" max-vertical-offset="765">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -987,8 +983,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7208238" vertical-offset="255" max-vertical-offset="735">
-          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.65217394" vertical-offset="255" max-vertical-offset="765">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding />
         </state>
       </provider>
