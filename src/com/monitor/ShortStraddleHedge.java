@@ -56,11 +56,18 @@ public class ShortStraddleHedge {
 
     public void startHedge () {
 
-        System.out.println("starting hedging...");
+//        System.out.println("starting hedging...");
+//
+//        System.out.println("upThreshold is: " + this.upThreshold);
+//        System.out.println("downThreshold is: " + this.downThreshold);
+//        System.out.println("interval is: " + this.interval);
 
-        System.out.println("upThreshold is: " + this.upThreshold);
-        System.out.println("downThreshold is: " + this.downThreshold);
-        System.out.println("interval is: " + this.interval);
+        logTextArea.append("- starting hedging with upThreshold " + this.upThreshold + " and downThreshold " + this.downThreshold + " at " +
+        this.interval + " mikes interval \n");
+
+        logTextArea.append("- Initial future position is: " + futureLongShort);
+
+
 
         this.handler.connect();
 
@@ -83,7 +90,8 @@ public class ShortStraddleHedge {
                     }
 
                     double lastPrice = handler.getlastPrice();
-                    System.out.println("The current price is: " + lastPrice);
+//                    System.out.println("The current price is: " + lastPrice);
+                    logTextArea.append("The current price is: " + lastPrice + "\n");
                     if(lastPrice > 0) {
                         // last price is ready
                         if (lastPrice > upThreshold) {
@@ -124,7 +132,8 @@ public class ShortStraddleHedge {
 
                 } else {
 
-                    System.out.println("Not connected");
+//                    System.out.println("Not connected");
+                    logTextArea.append("Not connected \n");
                 }
 
 

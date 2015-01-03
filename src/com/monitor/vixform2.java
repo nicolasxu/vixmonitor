@@ -39,8 +39,8 @@ public class vixform2 extends JFrame {
 
 
         hedge = new ShortStraddleHedge(upThreshold, downThreshold, interval, futureLongShort);
-        hedge.startHedge();
         hedge.assignLogger(logTextArea);
+        hedge.startHedge();
         this.startBtn.setEnabled(false);
         this.stopBtn.setEnabled(true);
     }
