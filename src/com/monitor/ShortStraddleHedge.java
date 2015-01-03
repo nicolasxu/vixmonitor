@@ -5,6 +5,8 @@ import com.ib.client.Contract;
 import com.ib.client.Order;
 
 import javax.swing.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -105,49 +107,69 @@ public class ShortStraddleHedge {
 
                     double lastPrice = handler.getlastPrice();
 
-                    logTextArea.append(counter++ + " checking last price: " + lastPrice + ", m_openOrders.size(): " + handler.m_openOrders.size() +
-                            " ,VIX future position: " + futureLongShort + "\n");
-                    if(lastPrice > 0) {
-                        // last price is ready
-                        if (lastPrice > upThreshold) {
-                            // buy
-                            if(futureLongShort == 0) {
-                                // buy
-                            }
+                    Calendar c = new GregorianCalendar();
 
-                            if(futureLongShort < 0 ) {
-                                // close short position
-                                // buy
-                            }
+                    logTextArea.append( String.format("%tT", c.getInstance()) +" "+ counter++ + " price: " + lastPrice +
+                            ", m_openOrders.size(): " + handler.m_openOrders.size() +
+                            " ,VIX future position: " + futureLongShort + "\n");
+
+                    if(lastPrice > 0) {
+
+                        if(lastPrice > upThreshold) {
 
                             if(futureLongShort > 0) {
                                 // do nothing
                             }
-                        }
 
-                        if (lastPrice < downThreshold) {
-                            // sell
                             if(futureLongShort == 0) {
-                                // sell
+                                buy(1,lastPrice);
                             }
 
+                            if(futureLongShort < 0) {
+
+                                // unlikely, but it can happen when price jumps suddenly within interval
+                                // from below downThreshold to above upThreshold
+                                buy(2, lastPrice);
+                            }
+                        }
+
+                        if(lastPrice <= upThreshold && lastPrice >= downThreshold) {
+
+                            if(futureLongShort == 0) {
+                                // All good, do nothing
+                            }
+
+                            if(futureLongShort > 0 && lastPrice < upThreshold - downTolerance) {
+                                sell(1, lastPrice);
+                            }
+
+                            if(futureLongShort < 0 && lastPrice > downThreshold + upTolerance) {
+                                buy(1, lastPrice);
+                            }
+
+                        }
+
+                        if(lastPrice < downThreshold) {
+
                             if(futureLongShort > 0) {
-                                // close long position
-                                // sell
+                                // unlikely
+                                sell(2, lastPrice);
+                            }
+
+                            if(futureLongShort == 0) {
+                                sell(1, lastPrice);
                             }
 
                             if(futureLongShort < 0) {
                                 // do nothing
+
                             }
                         }
-
-                        // handler.sendOrder(contract, order);
                     }
 
 
                 } else {
 
-//                    System.out.println("Not connected");
                     logTextArea.append("Not connected \n");
                 }
 

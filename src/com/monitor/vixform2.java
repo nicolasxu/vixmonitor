@@ -110,13 +110,13 @@ public class vixform2 extends JFrame {
                 label1.setText("Up Threshold");
 
                 //---- upThresholdTextField ----
-                upThresholdTextField.setText("17");
+                upThresholdTextField.setText("19");
 
                 //---- label2 ----
                 label2.setText("Down Threshold");
 
                 //---- downThresholdTextField ----
-                downThresholdTextField.setText("19");
+                downThresholdTextField.setText("17");
 
                 //---- label3 ----
                 label3.setText("Future Position");

@@ -19,7 +19,7 @@ new FormModel {
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "upThresholdTextField"
-						"text": "17"
+						"text": "19"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "label2"
@@ -27,7 +27,7 @@ new FormModel {
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
 						name: "downThresholdTextField"
-						"text": "19"
+						"text": "17"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "label3"

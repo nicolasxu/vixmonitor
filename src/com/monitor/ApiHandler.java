@@ -7,8 +7,7 @@ package com.monitor;
 
 import com.ib.client.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 
 /**
@@ -104,11 +103,13 @@ public class ApiHandler implements EWrapper{
 
     public int placeOrder (Contract contract, Order order) {
 
-        System.out.println("ApiHandler - testOrder()");
+//        System.out.println("ApiHandler - testOrder()");
 
         this.m_socket.placeOrder(this.m_nextValidOrderId, contract, order);
 
-        this.hedge.logTextArea.append("order sent: " + order.m_action + " " + order.m_totalQuantity + " " + contract.m_localSymbol + " " + contract.m_expiry + " placed \n");
+        Calendar c = new GregorianCalendar();
+
+        this.hedge.logTextArea.append(String.format("%tT", c.getInstance()) + " order placed: " + order.m_action + " " + order.m_totalQuantity + " " + contract.m_localSymbol + " " + contract.m_expiry + " \n");
 
         return this.m_nextValidOrderId++;
 
@@ -669,7 +670,12 @@ public class ApiHandler implements EWrapper{
 
                 if(execution.m_side.equals("BOT") ) {
                     this.hedge.futureLongShort =  this.hedge.futureLongShort + execution.m_shares;
-                    System.out.println("execDetails() - buy Order Filled");
+
+                    Calendar c = new GregorianCalendar();
+
+                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - buy Order Filled");
+
+
 
 
                 }
@@ -677,7 +683,10 @@ public class ApiHandler implements EWrapper{
                 if(execution.m_side.equals("SLD")) {
 
                     this.hedge.futureLongShort =  this.hedge.futureLongShort - execution.m_shares;
-                    System.out.println("execDetails() - sell Order Filled");
+
+                    Calendar c = new GregorianCalendar();
+
+                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - sell Order Filled");
 
 
                 }
@@ -689,14 +698,18 @@ public class ApiHandler implements EWrapper{
 
                 orderToRemove = oo;
 
+
+
             }
         }
 
         if(orderToRemove != null) {
             m_openOrders.remove(orderToRemove);
 
-            System.out.println("execDetails() -  open order removed because of execution");
-            System.out.println("execDetails() -  openOrder.size() " + m_openOrders.size());
+            Calendar c = new GregorianCalendar();
+
+            hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - Open Order Closed");
+
         }
 
     }
