@@ -188,6 +188,8 @@ public class ApiHandler implements EWrapper{
             System.out.println("we got last price: " + field);
             System.out.println("tickPrice() - last price is: " + price);
 
+
+
         }
 
 
