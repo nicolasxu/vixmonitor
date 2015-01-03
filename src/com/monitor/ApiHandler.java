@@ -53,8 +53,6 @@ public class ApiHandler implements EWrapper{
         this.m_openOrders = new ArrayList<OpenOrder>();
 
 
-
-
     }
     public void getHedgeRef (ShortStraddleHedge hedge) {
         this.hedge = hedge;
@@ -66,14 +64,11 @@ public class ApiHandler implements EWrapper{
     }
 
     public void disConnect () {
+
         this.m_socket.eDisconnect();
+        this.hedge.logTextArea.append("disConnected... \n");
     }
 
-    public void sendOrder (Contract contract, Order order ) {
-
-        this.m_socket.placeOrder(this.m_nextValidOrderId, contract, order);
-
-    }
 
     public void startReceivingPrice(Contract contract) {
 
@@ -112,6 +107,8 @@ public class ApiHandler implements EWrapper{
         System.out.println("ApiHandler - testOrder()");
 
         this.m_socket.placeOrder(this.m_nextValidOrderId, contract, order);
+
+        this.hedge.logTextArea.append("order sent: " + order.m_action + " " + order.m_totalQuantity + " " + contract.m_localSymbol + " " + contract.m_expiry + " placed \n");
 
         return this.m_nextValidOrderId++;
 
