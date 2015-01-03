@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ib.iml" filepath="$PROJECT_DIR$/ib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vixMonitor/vixMonitor.iml" filepath="$PROJECT_DIR$/vixMonitor/vixMonitor.iml" />
+    </modules>
+  </component>
+</project>
