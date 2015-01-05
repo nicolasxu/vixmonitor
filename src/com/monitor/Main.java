@@ -12,3 +12,8 @@ public class Main {
 
     }
 }
+
+
+// 1. request data & save to file
+// 2. load the file get the data
+// 3. feed the data to hedge object

@@ -181,7 +181,7 @@ public class ApiHandler implements EWrapper{
 
             this.m_lastPrice = price;
 
-            this.hedge.logTextArea.append("current Price is: " + price + "\n");
+            this.hedge.logTextArea.append("last Price updated to: " + price + "\n");
 
             System.out.println("we got last price: " + field);
             System.out.println("tickPrice() - last price is: " + price);

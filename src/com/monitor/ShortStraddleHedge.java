@@ -2,6 +2,7 @@ package com.monitor;
 
 
 import com.ib.client.Contract;
+import com.ib.client.EWrapper;
 import com.ib.client.Order;
 
 import javax.swing.*;
@@ -33,7 +34,7 @@ public class ShortStraddleHedge {
 
 
 
-    public ShortStraddleHedge (double upThreshold, double downThreshold, int interval, int futureLongShort) {
+    public ShortStraddleHedge (double upThreshold, double downThreshold, int interval, int futureLongShort, ApiHandler handler) {
         this.upThreshold = upThreshold;
         this.downThreshold = downThreshold;
 
@@ -42,9 +43,14 @@ public class ShortStraddleHedge {
 
         // Set tolerance value
         this.upTolerance = 0.2;
-        this.downThreshold = 0.2;
+        this.downTolerance = 0.2;
 
-        this.handler = new ApiHandler();
+        if(handler == null) {
+            this.handler = new ApiHandler();
+        } else {
+            this.handler = handler;
+        }
+
 
         // Initialize the contract internally, 2015 Jan VIX Future
         this.contract = new Contract();
@@ -73,12 +79,6 @@ public class ShortStraddleHedge {
 
     public void startHedge () {
 
-//        System.out.println("starting hedging...");
-//
-//        System.out.println("upThreshold is: " + this.upThreshold);
-//        System.out.println("downThreshold is: " + this.downThreshold);
-//        System.out.println("interval is: " + this.interval);
-
         logTextArea.append("- starting hedging with upThreshold " + this.upThreshold + " and downThreshold " + this.downThreshold + " at " +
         this.interval + " mikes interval \n");
 
@@ -97,8 +97,6 @@ public class ShortStraddleHedge {
 
                 if(handler.getNextValidOrderId() > 0) {
                     // we are connected
-
-//                    System.out.println("handler.m_openOrders.size(): " + handler.m_openOrders.size());
 
                     if(receivingPriceFlag == false ) {
                         handler.startReceivingPrice(contract);
