@@ -103,8 +103,6 @@ public class ApiHandler implements EWrapper{
 
     public int placeOrder (Contract contract, Order order) {
 
-//        System.out.println("ApiHandler - testOrder()");
-
         this.m_socket.placeOrder(this.m_nextValidOrderId, contract, order);
 
         Calendar c = new GregorianCalendar();
@@ -113,6 +111,13 @@ public class ApiHandler implements EWrapper{
 
         return this.m_nextValidOrderId++;
 
+    }
+
+    public void cancelAllOrders () {
+        for(OpenOrder oo: m_openOrders) {
+            this.m_socket.cancelOrder(oo.orderId);
+        }
+        m_openOrders.clear();
     }
 
     // -------------- Connection and Server ------------------- //
@@ -661,19 +666,25 @@ public class ApiHandler implements EWrapper{
         //             This structure contains a full description of the contract that was executed.
         // execution   Execution   This structure contains addition order execution details.
 
+        System.out.println("execDetails() triggered");
+        Calendar c = new GregorianCalendar();
+        hedge.logTextArea.append(String.format("%tT", c.getInstance()) + " execDetails() -  triggered\n");
 
         OpenOrder orderToRemove = null;
         for(OpenOrder oo: m_openOrders) {
 
             if(execution.m_orderId == oo.orderId) {
 
+//                System.out.println("execDetails() - order found in m_openOrders");
+                 c = new GregorianCalendar();
+                hedge.logTextArea.append(String.format("%tT", c.getInstance()) + " execDetails() - order found in m_openOrders \n");
 
                 if(execution.m_side.equals("BOT") ) {
                     this.hedge.futureLongShort =  this.hedge.futureLongShort + execution.m_shares;
 
-                    Calendar c = new GregorianCalendar();
+                     c = new GregorianCalendar();
 
-                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - buy Order Filled");
+                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - buy Order Filled \n");
 
 
 
@@ -684,9 +695,9 @@ public class ApiHandler implements EWrapper{
 
                     this.hedge.futureLongShort =  this.hedge.futureLongShort - execution.m_shares;
 
-                    Calendar c = new GregorianCalendar();
+                     c = new GregorianCalendar();
 
-                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - sell Order Filled");
+                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - sell Order Filled \n");
 
 
                 }
@@ -706,9 +717,9 @@ public class ApiHandler implements EWrapper{
         if(orderToRemove != null) {
             m_openOrders.remove(orderToRemove);
 
-            Calendar c = new GregorianCalendar();
+             c = new GregorianCalendar();
 
-            hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - Open Order Closed");
+            hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - Open Order Closed\n");
 
         }
 

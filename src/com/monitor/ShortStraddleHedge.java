@@ -120,14 +120,21 @@ public class ShortStraddleHedge {
                             }
 
                             if(futureLongShort == 0) {
+
+                                // clear all pending order then buy, no matter they are sell or buy.
+                                handler.cancelAllOrders();
                                 buy(1,lastPrice);
+                                handler.getContractOpenOrders();
                             }
 
                             if(futureLongShort < 0) {
 
                                 // unlikely, but it can happen when price jumps suddenly within interval
                                 // from below downThreshold to above upThreshold
+                                // TODO: clear all pending order, and then buy
+                                handler.cancelAllOrders();
                                 buy(2, lastPrice);
+                                handler.getContractOpenOrders();
                             }
                         }
 
@@ -138,11 +145,20 @@ public class ShortStraddleHedge {
                             }
 
                             if(futureLongShort > 0 && lastPrice < upThreshold - downTolerance) {
+
+                                handler.cancelAllOrders();
+
                                 sell(1, lastPrice);
+                                handler.getContractOpenOrders();
                             }
 
                             if(futureLongShort < 0 && lastPrice > downThreshold + upTolerance) {
+
+                                handler.cancelAllOrders();
+
                                 buy(1, lastPrice);
+
+                                handler.getContractOpenOrders();
                             }
 
                         }
@@ -151,11 +167,20 @@ public class ShortStraddleHedge {
 
                             if(futureLongShort > 0) {
                                 // unlikely
+
+                                handler.cancelAllOrders();
+
                                 sell(2, lastPrice);
+                                handler.getContractOpenOrders();
                             }
 
                             if(futureLongShort == 0) {
+
+                                handler.cancelAllOrders();
+
                                 sell(1, lastPrice);
+
+                                handler.getContractOpenOrders();
                             }
 
                             if(futureLongShort < 0) {

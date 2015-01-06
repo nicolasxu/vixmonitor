@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7d0a112-049c-48a8-8638-ec39a9246d64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ApiHandler.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ApiHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/ApiHandler.java" afterPath="$PROJECT_DIR$/src/com/monitor/ApiHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/Main.java" afterPath="$PROJECT_DIR$/src/com/monitor/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" afterPath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/vixform2.java" afterPath="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vixmonitor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,17 +51,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vixform2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vixform2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33042213" vertical-offset="403" max-vertical-offset="3900">
-              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="722" max-vertical-offset="3915">
+              <caret line="59" column="52" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
               <folding>
-                <element signature="e#0#12375#0" expanded="true" />
+                <element signature="e#0#12428#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-                <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+                <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+                <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
               </folding>
             </state>
           </provider>
@@ -75,8 +70,8 @@
       <file leaf-file-name="ShortStraddleHedge.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3703704" vertical-offset="1589" max-vertical-offset="3300">
-              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2447" max-vertical-offset="3675">
+              <caret line="124" column="55" selection-start-line="124" selection-start-column="40" selection-end-line="124" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,14 +99,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ApiHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/ApiHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1919" max-vertical-offset="13125">
-              <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2739726" vertical-offset="955" max-vertical-offset="13290">
+              <caret line="75" column="83" selection-start-line="75" selection-start-column="83" selection-end-line="75" selection-end-column="83" />
               <folding>
-                <element signature="e#0#33746#0" expanded="true" />
+                <element signature="e#0#34320#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#1718#1728#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -136,9 +132,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/monitor/vixform2.jfd" />
         <option value="$PROJECT_DIR$/src/com/monitor/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
-        <option value="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/ApiHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
+        <option value="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
       </list>
     </option>
   </component>
@@ -460,10 +456,11 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.49960095" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3956044" sideWeight="0.52274543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32848838" sideWeight="0.50039905" order="7" side_tool="true" content_ui="tabs" />
@@ -476,11 +473,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18618618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20467032" sideWeight="0.51157224" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20467032" sideWeight="0.51157224" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32968238" sideWeight="0.49960095" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JFormDesigner Error Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32994187" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -536,7 +532,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="10" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -567,11 +563,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1500" max-vertical-offset="4020">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12375#0" expanded="true" />
+            <element signature="e#0#12428#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-            <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+            <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -591,8 +587,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12915">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -622,11 +619,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="4125">
           <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding>
-            <element signature="e#0#12375#0" expanded="true" />
+            <element signature="e#0#12428#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-            <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+            <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -646,8 +643,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11910">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -677,11 +675,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="2715">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12375#0" expanded="true" />
+            <element signature="e#0#12428#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-            <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+            <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -701,8 +699,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10110">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -725,11 +724,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="510">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12375#0" expanded="true" />
+            <element signature="e#0#12428#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-            <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+            <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -749,8 +748,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="9270">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -773,11 +773,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2910">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12375#0" expanded="true" />
+            <element signature="e#0#12428#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-            <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+            <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -797,8 +797,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3316" max-vertical-offset="9240">
           <caret line="230" column="42" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="42" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -821,11 +822,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2865">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12375#0" expanded="true" />
+            <element signature="e#0#12428#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-            <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+            <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -845,8 +846,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3316" max-vertical-offset="9240">
           <caret line="230" column="42" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="42" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -874,8 +876,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="9240">
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -943,11 +946,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/OpenOrder.java">
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="722" max-vertical-offset="3915">
+          <caret line="59" column="52" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#12428#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <marker date="1420475148000" expanded="true" signature="1963:11578" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420475148000" expanded="true" signature="3063:3759" placeholder="//..." />
+            <marker date="1420475148000" expanded="true" signature="11590:12425" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="3675">
+          <caret line="124" column="55" selection-start-line="124" selection-start-column="40" selection-end-line="124" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -959,50 +991,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/OpenOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monitor/ApiHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1919" max-vertical-offset="13125">
-          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2739726" vertical-offset="955" max-vertical-offset="13290">
+          <caret line="75" column="83" selection-start-line="75" selection-start-column="83" selection-end-line="75" selection-end-column="83" />
           <folding>
-            <element signature="e#0#33746#0" expanded="true" />
+            <element signature="e#0#34320#0" expanded="true" />
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3703704" vertical-offset="1589" max-vertical-offset="3300">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33042213" vertical-offset="403" max-vertical-offset="3900">
-          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#12375#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1420467808000" expanded="true" signature="1910:11525" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420467808000" expanded="true" signature="3010:3706" placeholder="//..." />
-            <marker date="1420467808000" expanded="true" signature="11537:12372" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <element signature="e#1718#1728#0" expanded="true" />
           </folding>
         </state>
       </provider>

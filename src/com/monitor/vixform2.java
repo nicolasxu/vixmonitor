@@ -57,6 +57,7 @@ public class vixform2 extends JFrame {
         System.out.println("order clicked");
 
         this.hedge.sell(1, 20);
+        this.hedge.handler.m_socket.reqOpenOrders();
     }
 
     private void reqOpenOrdersBtnActionPerformed(ActionEvent e) {
