@@ -36,6 +36,8 @@ public class ApiHandler implements EWrapper{
 
     ArrayList<OpenOrder> m_openOrders;
 
+    boolean m_openOrderEnd;
+
     public EClientSocket m_socket;
 
     public ShortStraddleHedge hedge;
@@ -50,6 +52,7 @@ public class ApiHandler implements EWrapper{
         this.m_accountValue = 0;
         this.m_positions = new ArrayList<Position>();
         this.m_openOrders = new ArrayList<OpenOrder>();
+        this.m_openOrderEnd = true; // flag to signal if we are receiving open order request
 
 
     }
@@ -65,7 +68,9 @@ public class ApiHandler implements EWrapper{
     public void disConnect () {
 
         this.m_socket.eDisconnect();
-        this.hedge.logTextArea.append("disConnected... \n");
+
+        this.hedge.logger.log("disConnected...");
+
     }
 
 
@@ -80,7 +85,7 @@ public class ApiHandler implements EWrapper{
     public void getPositions() {
 
         // test
-        System.out.println("this.hedge.futureLongShort in getlastPrice " + this.hedge.futureLongShort);
+        System.out.println("this.hedge.futureLongShort in getLastPrice " + this.hedge.futureLongShort);
 
         this.m_positions.clear();
         this.m_socket.reqAccountUpdates(true, this.m_accountString);
@@ -89,6 +94,9 @@ public class ApiHandler implements EWrapper{
 
     public void getContractOpenOrders () {
         this.m_openOrders.clear();
+        this.m_openOrderEnd = false;
+
+        this.hedge.logger.log("m_openOrderEnd: false ");
         this.m_socket.reqOpenOrders();
     }
 
@@ -96,7 +104,7 @@ public class ApiHandler implements EWrapper{
         return this.m_nextValidOrderId;
     }
 
-    public double getlastPrice () {
+    public double getLastPrice() {
 
         return this.m_lastPrice;
     }
@@ -105,9 +113,13 @@ public class ApiHandler implements EWrapper{
 
         this.m_socket.placeOrder(this.m_nextValidOrderId, contract, order);
 
-        Calendar c = new GregorianCalendar();
+        String output = "order placed: " + order.m_action;
 
-        this.hedge.logTextArea.append(String.format("%tT", c.getInstance()) + " order placed: " + order.m_action + " " + order.m_totalQuantity + " " + contract.m_localSymbol + " " + contract.m_expiry + " \n");
+        output = output + " " + order.m_totalQuantity;
+        output = output + " " + contract.m_localSymbol;
+        output = output + " " + contract.m_expiry;
+
+        this.hedge.logger.log(output);
 
         return this.m_nextValidOrderId++;
 
@@ -118,6 +130,10 @@ public class ApiHandler implements EWrapper{
             this.m_socket.cancelOrder(oo.orderId);
         }
         m_openOrders.clear();
+    }
+
+    public int getOpenOrderSize () {
+        return m_openOrders.size();
     }
 
     // -------------- Connection and Server ------------------- //
@@ -186,17 +202,9 @@ public class ApiHandler implements EWrapper{
 
             this.m_lastPrice = price;
 
-            this.hedge.logTextArea.append("last Price updated to: " + price + "\n");
-
-            System.out.println("we got last price: " + field);
-            System.out.println("tickPrice() - last price is: " + price);
-
-
+            this.hedge.logger.log("Price updated: " + price);
 
         }
-
-
-
     }
 
     @Override
@@ -414,6 +422,10 @@ public class ApiHandler implements EWrapper{
     public void openOrderEnd() {
 
         System.out.println("openOrderEnd() - triggered");
+
+        this.m_openOrderEnd = true;
+
+        this.hedge.logger.log("m_openOrderEnd: true");
 
     }
 
@@ -666,62 +678,73 @@ public class ApiHandler implements EWrapper{
         //             This structure contains a full description of the contract that was executed.
         // execution   Execution   This structure contains addition order execution details.
 
-        System.out.println("execDetails() triggered");
         Calendar c = new GregorianCalendar();
-        hedge.logTextArea.append(String.format("%tT", c.getInstance()) + " execDetails() -  triggered\n");
 
-        OpenOrder orderToRemove = null;
-        for(OpenOrder oo: m_openOrders) {
+        this.hedge.logger.log("execDetails() - some order is executed");
 
-            if(execution.m_orderId == oo.orderId) {
+        Timer timer1 = new Timer();
 
-//                System.out.println("execDetails() - order found in m_openOrders");
-                 c = new GregorianCalendar();
-                hedge.logTextArea.append(String.format("%tT", c.getInstance()) + " execDetails() - order found in m_openOrders \n");
+        class UpdateExecDetailTask extends TimerTask {
 
-                if(execution.m_side.equals("BOT") ) {
-                    this.hedge.futureLongShort =  this.hedge.futureLongShort + execution.m_shares;
-
-                     c = new GregorianCalendar();
-
-                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - buy Order Filled \n");
-
-
-
-
-                }
-
-                if(execution.m_side.equals("SLD")) {
-
-                    this.hedge.futureLongShort =  this.hedge.futureLongShort - execution.m_shares;
-
-                     c = new GregorianCalendar();
-
-                    hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - sell Order Filled \n");
-
-
-                }
+            Timer timer;
+            Execution execution;
+            public UpdateExecDetailTask(Timer timer, Execution execution) {
+                this.timer = timer;
+                this.execution = execution;
             }
+            @Override
+            public void run() {
+                // TODO: run task
+                if(m_openOrderEnd == true) {
 
-            oo.order.m_totalQuantity = oo.order.m_totalQuantity - execution.m_shares;
+                    OpenOrder orderToRemove = null;
 
-            if(oo.order.m_totalQuantity == 0) {
+                    for(OpenOrder oo: m_openOrders) {
 
-                orderToRemove = oo;
+                        if(execution.m_orderId == oo.orderId) {
 
+                            hedge.logger.log("execDetails() - order found in m_openOrders");
+
+                            if(execution.m_side.equals("BOT") ) {
+
+                                hedge.futureLongShort =  hedge.futureLongShort + execution.m_shares;
+
+                                hedge.logger.log("execDetails() - buy Order Filled");
+                            }
+
+                            if(execution.m_side.equals("SLD")) {
+
+                                hedge.futureLongShort =  hedge.futureLongShort - execution.m_shares;
+
+                                hedge.logger.log("execDetails() - sell Order Filled");
+
+                            }
+                        }
+
+                        oo.order.m_totalQuantity = oo.order.m_totalQuantity - execution.m_shares;
+
+                        if(oo.order.m_totalQuantity == 0) {
+
+                            orderToRemove = oo;
+                        }
+                    }
+
+                    if(orderToRemove != null) {
+
+                        m_openOrders.remove(orderToRemove);
+
+                        hedge.logger.log("execDetails() - filled Order removed ");
+                    }
+
+                    this.timer.cancel();
+                }
 
 
             }
         }
 
-        if(orderToRemove != null) {
-            m_openOrders.remove(orderToRemove);
-
-             c = new GregorianCalendar();
-
-            hedge.logTextArea.append(  String.format("%tT", c.getInstance()) + " execDetails() - Open Order Closed\n");
-
-        }
+        TimerTask updateTask = new UpdateExecDetailTask(timer1, execution);
+        timer1.schedule(updateTask,0, 200);
 
     }
 

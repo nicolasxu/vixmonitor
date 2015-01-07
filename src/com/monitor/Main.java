@@ -7,8 +7,16 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        // float upThreshold, float downThreshold, float strikePrice, int interval, int futureLongShort
-        JFrame mainFrame = new vixform2();
+
+//        JFrame mainFrame = new vixform2();
+
+        ApiHandler handler = new TestHandler();
+        ShortStraddleHedge hedge = new ShortStraddleHedge(19, 18, 30, 0, handler);
+        ConsoleLogger cLogger = new ConsoleLogger();
+        hedge.assignLogger(cLogger);
+
+
+
 
     }
 }

@@ -2,10 +2,8 @@ package com.monitor;
 
 
 import com.ib.client.Contract;
-import com.ib.client.EWrapper;
 import com.ib.client.Order;
 
-import javax.swing.*;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Timer;
@@ -18,7 +16,6 @@ public class ShortStraddleHedge {
     public ApiHandler handler;
     public double upThreshold;
     public double downThreshold;
-    public double strikePrice;
     public int futureLongShort = 0; // 1: long, -1 short
     public int interval = 0; // check interval in mikes
     public double upTolerance = 0; // after a order is filled, resulting from reaching up or down threshold,
@@ -30,7 +27,7 @@ public class ShortStraddleHedge {
     public Contract contract;
     public Timer timer;
 
-    public JTextArea logTextArea;
+    public ILogger logger;
 
 
 
@@ -54,7 +51,7 @@ public class ShortStraddleHedge {
 
         // Initialize the contract internally, 2015 Jan VIX Future
         this.contract = new Contract();
-//        this.contract.m_symbol = "VXF5"; // 2015 JAN VIX FUTURE, EXPIRED AT JAN 15
+
         this.contract.m_symbol = "VIX";
         this.contract.m_secType = "FUT";
         this.contract.m_expiry = "20150121";
@@ -73,18 +70,16 @@ public class ShortStraddleHedge {
 
     }
 
-    public void assignLogger (JTextArea ta) {
-        this.logTextArea = ta;
+    public void assignLogger (ILogger logger) {
+        this.logger = logger;
     }
 
     public void startHedge () {
+        logger.log("- starting hedging with upThreshold " + this.upThreshold +
+                " and downThreshold " + this.downThreshold + " at " +
+                        this.interval + " mikes interval");
 
-        logTextArea.append("- starting hedging with upThreshold " + this.upThreshold + " and downThreshold " + this.downThreshold + " at " +
-        this.interval + " mikes interval \n");
-
-        logTextArea.append("- Initial future position is: " + futureLongShort + "\n");
-
-
+        logger.log("- Initial future position is: " + futureLongShort);
 
         this.handler.connect();
 
@@ -103,13 +98,14 @@ public class ShortStraddleHedge {
                         receivingPriceFlag = true;
                     }
 
-                    double lastPrice = handler.getlastPrice();
+                    double lastPrice = handler.getLastPrice();
 
                     Calendar c = new GregorianCalendar();
 
-                    logTextArea.append( String.format("%tT", c.getInstance()) +" "+ counter++ + " price: " + lastPrice +
-                            ", m_openOrders.size(): " + handler.m_openOrders.size() +
-                            " ,VIX future position: " + futureLongShort + "\n");
+                    logger.log(counter++ + " price: " + lastPrice +
+                            ", m_openOrders.size(): " + handler.getOpenOrderSize() +
+                            " ,VIX future position: " + futureLongShort);
+
 
                     if(lastPrice > 0) {
 
@@ -123,6 +119,7 @@ public class ShortStraddleHedge {
 
                                 // clear all pending order then buy, no matter they are sell or buy.
                                 handler.cancelAllOrders();
+                                handler.m_openOrderEnd = false;
                                 buy(1,lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -133,6 +130,7 @@ public class ShortStraddleHedge {
                                 // from below downThreshold to above upThreshold
                                 // TODO: clear all pending order, and then buy
                                 handler.cancelAllOrders();
+                                handler.m_openOrderEnd = false;
                                 buy(2, lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -147,7 +145,7 @@ public class ShortStraddleHedge {
                             if(futureLongShort > 0 && lastPrice < upThreshold - downTolerance) {
 
                                 handler.cancelAllOrders();
-
+                                handler.m_openOrderEnd = false;
                                 sell(1, lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -155,9 +153,8 @@ public class ShortStraddleHedge {
                             if(futureLongShort < 0 && lastPrice > downThreshold + upTolerance) {
 
                                 handler.cancelAllOrders();
-
+                                handler.m_openOrderEnd = false;
                                 buy(1, lastPrice);
-
                                 handler.getContractOpenOrders();
                             }
 
@@ -169,7 +166,7 @@ public class ShortStraddleHedge {
                                 // unlikely
 
                                 handler.cancelAllOrders();
-
+                                handler.m_openOrderEnd = false;
                                 sell(2, lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -177,7 +174,7 @@ public class ShortStraddleHedge {
                             if(futureLongShort == 0) {
 
                                 handler.cancelAllOrders();
-
+                                handler.m_openOrderEnd = false;
                                 sell(1, lastPrice);
 
                                 handler.getContractOpenOrders();
@@ -193,7 +190,7 @@ public class ShortStraddleHedge {
 
                 } else {
 
-                    logTextArea.append("Not connected \n");
+                    logger.log("Not connected");
                 }
 
 
