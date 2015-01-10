@@ -3,6 +3,9 @@ package com.monitor;
 import com.ib.client.Contract;
 import com.ib.client.Order;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -12,27 +15,58 @@ public class TestHandler extends ApiHandler{
 
     int m_simNextValidOrderId;
 
-    ArrayList<OrderRecord> m_orderRecords;
+    String m_fileName;
 
-    ArrayList<Integer> m_prices; // this variable holds price loaded from file
+    ArrayList<OrderRecord> m_orderRecords; // holds executed orders for calculating P&L
+
+    ArrayList<PriceRecord> m_prices; // this variable holds price and time loaded from file
 
     int priceIndex;
+
+    public class PriceRecord {
+        int timeStamp;
+        double price;
+        public PriceRecord(int timeStamp, double price) {
+            this.timeStamp = timeStamp;
+            this.price = price;
+        }
+    }
 
     public TestHandler() {
         m_simNextValidOrderId = 1;
         m_orderRecords = new ArrayList<OrderRecord>();
-        m_prices = new ArrayList<Integer>();
+        m_prices = new ArrayList<PriceRecord>();
         priceIndex = 0;
+        m_fileName = "/Users/nick/documents/testFile.txt";
     }
 
     public void connect() {
 
         // TODO: implement file loading
+        try(BufferedReader br = new BufferedReader(new FileReader(this.m_fileName))) {
+            String sCurrentLine;
+            String[] results;
+            while((sCurrentLine = br.readLine()) != null ) {
 
-        hedge.logger.log("connect() -  loading data from file...");
+                results = sCurrentLine.split(",");
+
+                m_prices.add(new PriceRecord(Integer.parseInt(results[0]), Double.parseDouble(results[1])));
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        hedge.logger.log("connect() -  data loaded from file...");
+
+
+        for(int i = 0; i < m_prices.size(); i++) {
+            hedge.logger.log("[" + i + "] " + m_prices.get(i).timeStamp + ": " + m_prices.get(i).price);
+
+        }
 
     }
-
 
 
     public int getNextValidOrderId () {
@@ -74,8 +108,9 @@ public class TestHandler extends ApiHandler{
 
     public double getLastPrice() {
 
-        return m_prices.get(priceIndex++);
+        return m_prices.get(priceIndex++).price;
     }
+
 
 
     public void cancelAllOrders () {
@@ -84,15 +119,11 @@ public class TestHandler extends ApiHandler{
     }
     public void getContractOpenOrders () {
 
-        m_openOrderEnd = true;
     }
 
     public void disConnect () {
         hedge.logger.log("disConnect() - sim handler disConnected");
     }
-
-
-
 
 
 

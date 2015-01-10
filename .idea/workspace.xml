@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7d0a112-049c-48a8-8638-ec39a9246d64" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/monitor/ConsoleLogger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/monitor/ILogger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/monitor/OrderRecord.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/monitor/TextAreaLogger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ApiHandler.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ApiHandler.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/Main.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/OpenOrder.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/OpenOrder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge$1DynamicHedgeTask.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/ShortStraddleHedge.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$1.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$2.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$3.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$4.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2.class" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/ApiHandler.java" afterPath="$PROJECT_DIR$/src/com/monitor/ApiHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/Main.java" afterPath="$PROJECT_DIR$/src/com/monitor/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/OpenOrder.java" afterPath="$PROJECT_DIR$/src/com/monitor/OpenOrder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" afterPath="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/TestHandler.java" afterPath="$PROJECT_DIR$/src/com/monitor/TestHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/vixform2.java" afterPath="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2.jfd" afterPath="$PROJECT_DIR$/out/production/vixmonitor/com/monitor/vixform2.jfd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/monitor/vixform2.jfd" afterPath="$PROJECT_DIR$/src/com/monitor/vixform2.jfd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vixmonitor.iml" afterPath="$PROJECT_DIR$/vixmonitor.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vixmonitor.iws" />
@@ -48,8 +54,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -58,33 +64,84 @@
       <file leaf-file-name="TestHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/TestHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#751#752#0" expanded="true" />
-                <element signature="e#795#796#0" expanded="true" />
+                <element signature="class#PriceRecord#0;class#TestHandler#0" expanded="false" />
+                <element signature="method#TestHandler#0;class#TestHandler#0" expanded="false" />
+                <element signature="method#connect#0;class#TestHandler#0" expanded="false" />
                 <element signature="method#placeOrder#0;class#TestHandler#0" expanded="false" />
                 <element signature="method#startReceivingPrice#0;class#TestHandler#0" expanded="false" />
+                <element signature="method#getLastPrice#0;class#TestHandler#0" expanded="false" />
                 <element signature="method#cancelAllOrders#0;class#TestHandler#0" expanded="false" />
                 <element signature="method#getContractOpenOrders#0;class#TestHandler#0" expanded="false" />
-                <element signature="e#1816#1817#0" expanded="true" />
-                <element signature="e#1891#1892#0" expanded="true" />
+                <element signature="e#2967#3027#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApiHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApiHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/ApiHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48698884" vertical-offset="1193" max-vertical-offset="13635">
-              <caret line="99" column="38" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="8130">
+              <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
               <folding>
-                <element signature="e#0#34867#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#3175#3176#0" expanded="true" />
-                <element signature="e#3217#3218#0" expanded="true" />
+                <element signature="docComment;class#ApiHandler#0" expanded="false" />
+                <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+                <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+                <element signature="e#4786#4879#0" expanded="false" />
+                <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#5441#5458#0" expanded="false" />
+                <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#5977#6065#0" expanded="false" />
+                <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#7407#7427#0" expanded="false" />
+                <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#8096#8191#0" expanded="false" />
+                <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#8863#8957#0" expanded="false" />
+                <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#9763#9906#0" expanded="false" />
+                <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#11117#11167#0" expanded="false" />
+                <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#11917#12048#0" expanded="false" />
+                <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#14788#14876#0" expanded="false" />
+                <element signature="e#15244#15345#0" expanded="false" />
+                <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#16001#16151#0" expanded="false" />
+                <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#16778#16832#0" expanded="false" />
+                <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#17383#17403#0" expanded="false" />
+                <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#19226#19296#0" expanded="false" />
+                <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#22982#23021#0" expanded="false" />
+                <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#23972#24125#0" expanded="false" />
+                <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#24646#24716#0" expanded="false" />
+                <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+                <element signature="e#25739#25837#0" expanded="false" />
+                <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+                <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,24 +151,8 @@
         <entry file="file://$PROJECT_DIR$/src/com/monitor/OrderRecord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vixform2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.777779" vertical-offset="0" max-vertical-offset="3915">
-              <caret line="41" column="45" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#12448#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <marker date="1420560892000" expanded="true" signature="1983:11598" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1420560892000" expanded="true" signature="3083:3779" placeholder="//..." />
-                <marker date="1420560892000" expanded="true" signature="11610:12445" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -126,26 +167,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShortStraddleHedge.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
+      <file leaf-file-name="ConsoleLogger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/monitor/ConsoleLogger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.296296" vertical-offset="1261" max-vertical-offset="3540">
-              <caret line="105" column="80" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="80" />
-              <folding>
-                <element signature="e#2225#2226#0" expanded="true" />
-                <element signature="e#2261#2262#0" expanded="true" />
-                <element signature="e#4187#4259#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Position.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monitor/Position.java">
+      <file leaf-file-name="ShortStraddleHedge.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="555">
-              <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-              <folding />
+            <state vertical-scroll-proportion="0.41520467" vertical-offset="1407" max-vertical-offset="1935">
+              <caret line="219" column="5" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
+              <folding>
+                <element signature="class#2653:6319" expanded="false" />
+                <element signature="e#7337#7338#0" expanded="true" />
+                <element signature="e#7378#7379#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,25 +194,9 @@
       <file leaf-file-name="OpenOrder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/monitor/OpenOrder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <caret line="17" column="33" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextAreaLogger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/monitor/TextAreaLogger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#260#261#0" expanded="true" />
-                <element signature="e#294#295#0" expanded="true" />
-                <element signature="e#528#529#0" expanded="true" />
-                <element signature="e#577#578#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -191,20 +216,20 @@
         <option value="$PROJECT_DIR$/src/com/monitor/VixFrame2.java" />
         <option value="$PROJECT_DIR$/../Projects/lesschat/www/view/shared/scripts.html" />
         <option value="$PROJECT_DIR$/src/com/monitor/Position.java" />
-        <option value="$PROJECT_DIR$/src/com/monitor/OpenOrder.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/com/monitor/vixform2.jfd" />
         <option value="$PROJECT_DIR$/src/com/monitor/testHandler.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/TextAreaLoggerImpl2222.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/TextAreaLogger.java" />
-        <option value="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/ILogger.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/ConsoleLogger.java" />
-        <option value="$PROJECT_DIR$/src/com/monitor/Main.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/OrderRecord.java" />
+        <option value="$PROJECT_DIR$/src/com/monitor/OpenOrder.java" />
+        <option value="$PROJECT_DIR$/src/com/monitor/vixform2.jfd" />
+        <option value="$PROJECT_DIR$/src/com/monitor/vixform2.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java" />
-        <option value="$PROJECT_DIR$/src/com/monitor/TestHandler.java" />
         <option value="$PROJECT_DIR$/src/com/monitor/ApiHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/monitor/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/monitor/TestHandler.java" />
       </list>
     </option>
   </component>
@@ -212,8 +237,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
-    <option name="y" value="23" />
+    <option name="x" value="4" />
+    <option name="y" value="33" />
     <option name="width" value="1374" />
     <option name="height" value="820" />
   </component>
@@ -247,6 +272,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="vixmonitor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -529,7 +558,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="23" width="1374" height="820" extended-state="0" />
+    <frame x="4" y="33" width="1374" height="820" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -538,7 +567,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.49960095" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3956044" sideWeight="0.52274543" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32848838" sideWeight="0.50039905" order="8" side_tool="true" content_ui="tabs" />
@@ -551,10 +579,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21321322" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20467032" sideWeight="0.51157224" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25686812" sideWeight="0.51157224" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.49960095" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JFormDesigner Error Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32994187" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -607,10 +636,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/lib/ant-javafx.jar!/com/sun/javafx/tools/ant/AntLog.class</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="17" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -623,54 +660,66 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="300">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="0" propertiesWidth="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="4125">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#12448#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1420560892000" expanded="true" signature="1983:11598" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420560892000" expanded="true" signature="3083:3779" placeholder="//..." />
-            <marker date="1420560892000" expanded="true" signature="11610:12445" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="368" max-vertical-offset="1275">
-          <caret line="150" column="29" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
-          <folding>
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#4187#4259#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monitor/ApiHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11910">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#34867#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="docComment;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+            <element signature="e#4786#4879#0" expanded="false" />
+            <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5441#5458#0" expanded="false" />
+            <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5977#6065#0" expanded="false" />
+            <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#7407#7427#0" expanded="false" />
+            <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8096#8191#0" expanded="false" />
+            <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8863#8957#0" expanded="false" />
+            <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#9763#9906#0" expanded="false" />
+            <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11117#11167#0" expanded="false" />
+            <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11917#12048#0" expanded="false" />
+            <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#14788#14876#0" expanded="false" />
+            <element signature="e#15244#15345#0" expanded="false" />
+            <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16001#16151#0" expanded="false" />
+            <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16778#16832#0" expanded="false" />
+            <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#17383#17403#0" expanded="false" />
+            <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#19226#19296#0" expanded="false" />
+            <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#22982#23021#0" expanded="false" />
+            <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#23972#24125#0" expanded="false" />
+            <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#24646#24716#0" expanded="false" />
+            <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#25739#25837#0" expanded="false" />
+            <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -700,11 +749,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="945" max-vertical-offset="2715">
           <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12448#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1420560892000" expanded="true" signature="1983:11598" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420560892000" expanded="true" signature="3083:3779" placeholder="//..." />
-            <marker date="1420560892000" expanded="true" signature="11610:12445" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="true" signature="-1:-1" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="false" signature="-1:-1" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -714,9 +760,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1860">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding>
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#4187#4259#0" expanded="false" />
+            <element signature="class#2653:6319" expanded="false" />
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7378#7379#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -726,10 +772,61 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10110">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#34867#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="docComment;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+            <element signature="e#4786#4879#0" expanded="false" />
+            <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5441#5458#0" expanded="false" />
+            <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5977#6065#0" expanded="false" />
+            <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#7407#7427#0" expanded="false" />
+            <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8096#8191#0" expanded="false" />
+            <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8863#8957#0" expanded="false" />
+            <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#9763#9906#0" expanded="false" />
+            <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11117#11167#0" expanded="false" />
+            <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11917#12048#0" expanded="false" />
+            <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#14788#14876#0" expanded="false" />
+            <element signature="e#15244#15345#0" expanded="false" />
+            <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16001#16151#0" expanded="false" />
+            <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16778#16832#0" expanded="false" />
+            <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#17383#17403#0" expanded="false" />
+            <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#19226#19296#0" expanded="false" />
+            <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#22982#23021#0" expanded="false" />
+            <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#23972#24125#0" expanded="false" />
+            <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#24646#24716#0" expanded="false" />
+            <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#25739#25837#0" expanded="false" />
+            <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -752,11 +849,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="510">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12448#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1420560892000" expanded="true" signature="1983:11598" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420560892000" expanded="true" signature="3083:3779" placeholder="//..." />
-            <marker date="1420560892000" expanded="true" signature="11610:12445" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="true" signature="-1:-1" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="false" signature="-1:-1" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -766,9 +860,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#4187#4259#0" expanded="false" />
+            <element signature="class#2653:6319" expanded="false" />
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7378#7379#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,10 +872,61 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="9270">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
-            <element signature="e#0#34867#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="docComment;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+            <element signature="e#4786#4879#0" expanded="false" />
+            <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5441#5458#0" expanded="false" />
+            <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5977#6065#0" expanded="false" />
+            <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#7407#7427#0" expanded="false" />
+            <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8096#8191#0" expanded="false" />
+            <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8863#8957#0" expanded="false" />
+            <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#9763#9906#0" expanded="false" />
+            <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11117#11167#0" expanded="false" />
+            <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11917#12048#0" expanded="false" />
+            <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#14788#14876#0" expanded="false" />
+            <element signature="e#15244#15345#0" expanded="false" />
+            <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16001#16151#0" expanded="false" />
+            <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16778#16832#0" expanded="false" />
+            <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#17383#17403#0" expanded="false" />
+            <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#19226#19296#0" expanded="false" />
+            <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#22982#23021#0" expanded="false" />
+            <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#23972#24125#0" expanded="false" />
+            <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#24646#24716#0" expanded="false" />
+            <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#25739#25837#0" expanded="false" />
+            <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -804,11 +949,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2910">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12448#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1420560892000" expanded="true" signature="1983:11598" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420560892000" expanded="true" signature="3083:3779" placeholder="//..." />
-            <marker date="1420560892000" expanded="true" signature="11610:12445" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="true" signature="-1:-1" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="false" signature="-1:-1" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -818,9 +960,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="720">
           <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#4187#4259#0" expanded="false" />
+            <element signature="class#2653:6319" expanded="false" />
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7378#7379#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -830,10 +972,61 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3316" max-vertical-offset="9240">
           <caret line="230" column="42" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="42" />
           <folding>
-            <element signature="e#0#34867#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="docComment;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+            <element signature="e#4786#4879#0" expanded="false" />
+            <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5441#5458#0" expanded="false" />
+            <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5977#6065#0" expanded="false" />
+            <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#7407#7427#0" expanded="false" />
+            <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8096#8191#0" expanded="false" />
+            <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8863#8957#0" expanded="false" />
+            <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#9763#9906#0" expanded="false" />
+            <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11117#11167#0" expanded="false" />
+            <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11917#12048#0" expanded="false" />
+            <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#14788#14876#0" expanded="false" />
+            <element signature="e#15244#15345#0" expanded="false" />
+            <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16001#16151#0" expanded="false" />
+            <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16778#16832#0" expanded="false" />
+            <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#17383#17403#0" expanded="false" />
+            <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#19226#19296#0" expanded="false" />
+            <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#22982#23021#0" expanded="false" />
+            <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#23972#24125#0" expanded="false" />
+            <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#24646#24716#0" expanded="false" />
+            <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#25739#25837#0" expanded="false" />
+            <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -856,11 +1049,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2865">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12448#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1420560892000" expanded="true" signature="1983:11598" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420560892000" expanded="true" signature="3083:3779" placeholder="//..." />
-            <marker date="1420560892000" expanded="true" signature="11610:12445" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="true" signature="-1:-1" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="false" signature="-1:-1" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
@@ -870,9 +1060,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="720">
           <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding>
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#4187#4259#0" expanded="false" />
+            <element signature="class#2653:6319" expanded="false" />
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7378#7379#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -882,10 +1072,61 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="3316" max-vertical-offset="9240">
           <caret line="230" column="42" selection-start-line="230" selection-start-column="31" selection-end-line="230" selection-end-column="42" />
           <folding>
-            <element signature="e#0#34867#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="docComment;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+            <element signature="e#4786#4879#0" expanded="false" />
+            <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5441#5458#0" expanded="false" />
+            <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5977#6065#0" expanded="false" />
+            <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#7407#7427#0" expanded="false" />
+            <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8096#8191#0" expanded="false" />
+            <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8863#8957#0" expanded="false" />
+            <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#9763#9906#0" expanded="false" />
+            <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11117#11167#0" expanded="false" />
+            <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11917#12048#0" expanded="false" />
+            <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#14788#14876#0" expanded="false" />
+            <element signature="e#15244#15345#0" expanded="false" />
+            <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16001#16151#0" expanded="false" />
+            <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16778#16832#0" expanded="false" />
+            <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#17383#17403#0" expanded="false" />
+            <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#19226#19296#0" expanded="false" />
+            <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#22982#23021#0" expanded="false" />
+            <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#23972#24125#0" expanded="false" />
+            <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#24646#24716#0" expanded="false" />
+            <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#25739#25837#0" expanded="false" />
+            <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -903,9 +1144,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="585">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#4187#4259#0" expanded="false" />
+            <element signature="class#2653:6319" expanded="false" />
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7378#7379#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -915,10 +1156,61 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="9240">
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
-            <element signature="e#0#34867#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="docComment;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+            <element signature="e#4786#4879#0" expanded="false" />
+            <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5441#5458#0" expanded="false" />
+            <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5977#6065#0" expanded="false" />
+            <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#7407#7427#0" expanded="false" />
+            <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8096#8191#0" expanded="false" />
+            <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8863#8957#0" expanded="false" />
+            <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#9763#9906#0" expanded="false" />
+            <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11117#11167#0" expanded="false" />
+            <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11917#12048#0" expanded="false" />
+            <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#14788#14876#0" expanded="false" />
+            <element signature="e#15244#15345#0" expanded="false" />
+            <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16001#16151#0" expanded="false" />
+            <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16778#16832#0" expanded="false" />
+            <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#17383#17403#0" expanded="false" />
+            <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#19226#19296#0" expanded="false" />
+            <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#22982#23021#0" expanded="false" />
+            <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#23972#24125#0" expanded="false" />
+            <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#24646#24716#0" expanded="false" />
+            <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#25739#25837#0" expanded="false" />
+            <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -993,47 +1285,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/ConsoleLogger.java">
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/TextAreaLogger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monitor/Position.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333" vertical-offset="0" max-vertical-offset="555">
+        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="555">
           <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/TextAreaLogger.java">
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="0" propertiesWidth="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="4380">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
-            <element signature="e#528#529#0" expanded="true" />
-            <element signature="e#577#578#0" expanded="true" />
+            <marker date="1420733433000" expanded="true" signature="-1:-1" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1420733433000" expanded="false" signature="-1:-1" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/lib/ant-javafx.jar!/com/sun/javafx/tools/ant/AntLog.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73770493" vertical-offset="0" max-vertical-offset="495">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monitor/OpenOrder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1046,75 +1339,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/vixform2.java">
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.777779" vertical-offset="0" max-vertical-offset="3915">
-          <caret line="41" column="45" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#12448#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <marker date="1420560892000" expanded="true" signature="1983:11598" placeholder="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1420560892000" expanded="true" signature="3083:3779" placeholder="//..." />
-            <marker date="1420560892000" expanded="true" signature="11610:12445" placeholder="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/lang/Long.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.296296" vertical-offset="1261" max-vertical-offset="3540">
-          <caret line="105" column="80" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="80" />
-          <folding>
-            <element signature="e#2225#2226#0" expanded="true" />
-            <element signature="e#2261#2262#0" expanded="true" />
-            <element signature="e#4187#4259#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="8169" max-vertical-offset="23340">
+          <caret line="588" column="0" selection-start-line="588" selection-start-column="0" selection-end-line="589" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monitor/OrderRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/monitor/Main.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+        <state vertical-scroll-proportion="5.6842103" vertical-offset="5304" max-vertical-offset="22920">
+          <caret line="581" column="39" selection-start-line="581" selection-start-column="39" selection-end-line="581" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7368421" vertical-offset="177" max-vertical-offset="690">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monitor/TestHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
+            <element signature="class#PriceRecord#0;class#TestHandler#0" expanded="false" />
+            <element signature="method#TestHandler#0;class#TestHandler#0" expanded="false" />
+            <element signature="method#connect#0;class#TestHandler#0" expanded="false" />
             <element signature="method#placeOrder#0;class#TestHandler#0" expanded="false" />
             <element signature="method#startReceivingPrice#0;class#TestHandler#0" expanded="false" />
+            <element signature="method#getLastPrice#0;class#TestHandler#0" expanded="false" />
             <element signature="method#cancelAllOrders#0;class#TestHandler#0" expanded="false" />
             <element signature="method#getContractOpenOrders#0;class#TestHandler#0" expanded="false" />
-            <element signature="e#1816#1817#0" expanded="true" />
-            <element signature="e#1891#1892#0" expanded="true" />
+            <element signature="e#2967#3027#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/monitor/ApiHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48698884" vertical-offset="1193" max-vertical-offset="13635">
-          <caret line="99" column="38" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="614" max-vertical-offset="8130">
+          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
           <folding>
-            <element signature="e#0#34867#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-            <element signature="e#3175#3176#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="docComment;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getPositions#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#getContractOpenOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#placeOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#cancelAllOrders#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#connectionClosed#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#currentTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#1;class#ApiHandler#0" expanded="false" />
+            <element signature="method#error#2;class#ApiHandler#0" expanded="false" />
+            <element signature="e#4786#4879#0" expanded="false" />
+            <element signature="method#tickPrice#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5441#5458#0" expanded="false" />
+            <element signature="method#tickSize#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#5977#6065#0" expanded="false" />
+            <element signature="method#tickOptionComputation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#7407#7427#0" expanded="false" />
+            <element signature="method#tickGeneric#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8096#8191#0" expanded="false" />
+            <element signature="method#tickString#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#8863#8957#0" expanded="false" />
+            <element signature="method#tickEFP#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#9763#9906#0" expanded="false" />
+            <element signature="method#tickSnapshotEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#marketDataType#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11117#11167#0" expanded="false" />
+            <element signature="method#orderStatus#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#11917#12048#0" expanded="false" />
+            <element signature="method#openOrder#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#14788#14876#0" expanded="false" />
+            <element signature="e#15244#15345#0" expanded="false" />
+            <element signature="method#openOrderEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#nextValidId#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16001#16151#0" expanded="false" />
+            <element signature="method#deltaNeutralValidation#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#16778#16832#0" expanded="false" />
+            <element signature="method#updateAccountValue#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#17383#17403#0" expanded="false" />
+            <element signature="method#updatePortfolio#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#19226#19296#0" expanded="false" />
+            <element signature="method#updateAccountTime#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountDownloadEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#accountSummaryEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#position#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#22982#23021#0" expanded="false" />
+            <element signature="method#positionEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#contractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#23972#24125#0" expanded="false" />
+            <element signature="method#bondContractDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#24646#24716#0" expanded="false" />
+            <element signature="method#contractDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#execDetails#0;class#ApiHandler#0" expanded="false" />
+            <element signature="e#25739#25837#0" expanded="false" />
+            <element signature="method#execDetailsEnd#0;class#ApiHandler#0" expanded="false" />
+            <element signature="method#commissionReport#0;class#ApiHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/ConsoleLogger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/monitor/ShortStraddleHedge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41520467" vertical-offset="1407" max-vertical-offset="1935">
+          <caret line="219" column="5" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
+          <folding>
+            <element signature="class#2653:6319" expanded="false" />
+            <element signature="e#7337#7338#0" expanded="true" />
+            <element signature="e#7378#7379#0" expanded="true" />
           </folding>
         </state>
       </provider>

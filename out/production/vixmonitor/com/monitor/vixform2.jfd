@@ -9,8 +9,8 @@ new FormModel {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq l {space :p:8:p, par l {par t:l::p {comp upThresholdTextField::l::105:x, comp label1::l::105:x}, comp downThresholdTextField::l:p:104:p, comp label2::l:p:104:p, comp label4:::p::p, par t:l::p {comp intervalTextField::l::104:x, comp futurePositionTextField::l::104:x, comp label3::l::104:x}, comp orderBtn:::p::p, comp reqOpenOrdersBtn:::p::p}, space s:::p, comp scrollPane1::::491:x}}"
-					"$verticalGroup": "par l {seq {comp label1:::p::p, space :p:4:p, comp upThresholdTextField:::p::p, space :p:5:p, comp label2:::p::p, space :::p, comp downThresholdTextField:::p::p, space u:::p, comp label3:::p::p, space :::p, comp futurePositionTextField:::p::p, space :::p, comp label4:::p::p, space :::p, comp intervalTextField:::p::p, space :::p, comp orderBtn:::p::p, space :::p, comp reqOpenOrdersBtn:::p::p, space :0:66:x}, comp scrollPane1::l::366:x}"
+					"$horizontalGroup": "par l {seq l {par l {seq {space :p:8:p, par l {par t:l::p {comp upThresholdTextField::l::105:x, comp label1::l::105:x}, comp downThresholdTextField::l:p:104:p, comp label2::l:p:104:p, comp label4:::p::p, par t:l::p {comp intervalTextField::l::104:x, comp futurePositionTextField::l::104:x, comp label3::l::104:x}, comp orderBtn:::p::p, comp reqOpenOrdersBtn:::p::p}}, seq l {space :::p, comp getHistory:::p::p}}, space s:::p, comp scrollPane1::::491:x}}"
+					"$verticalGroup": "par l {seq {comp label1:::p::p, space :p:4:p, comp upThresholdTextField:::p::p, space :p:5:p, comp label2:::p::p, space :::p, comp downThresholdTextField:::p::p, space u:::p, comp label3:::p::p, space :::p, comp futurePositionTextField:::p::p, space :::p, comp label4:::p::p, space :::p, comp intervalTextField:::p::p, space :::p, comp orderBtn:::p::p, space :::p, comp reqOpenOrdersBtn:::p::p, space :::p, comp getHistory:::p::p, space :0:33:x}, comp scrollPane1::l::366:x}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {
@@ -60,6 +60,11 @@ new FormModel {
 						name: "reqOpenOrdersBtn"
 						"text": "reqOpenOrder"
 						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "reqOpenOrdersBtnActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "getHistory"
+						"text": "get History"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "getHistoryActionPerformed", true ) )
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "Center"

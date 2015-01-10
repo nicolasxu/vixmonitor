@@ -65,6 +65,11 @@ public class vixform2 extends JFrame {
         this.hedge.handler.m_socket.reqOpenOrders();
     }
 
+    private void getHistoryActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        this.hedge.getHistory();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - shenxin xu
@@ -82,6 +87,7 @@ public class vixform2 extends JFrame {
         intervalTextField = new JTextField();
         orderBtn = new JButton();
         reqOpenOrdersBtn = new JButton();
+        getHistory = new JButton();
         buttonBar = new JPanel();
         updateBtn = new JButton();
         startBtn = new JButton();
@@ -154,25 +160,39 @@ public class vixform2 extends JFrame {
                     }
                 });
 
+                //---- getHistory ----
+                getHistory.setText("get History");
+                getHistory.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        getHistoryActionPerformed(e);
+                    }
+                });
+
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
                 contentPanel.setLayout(contentPanelLayout);
                 contentPanelLayout.setHorizontalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addGap(8, 8, 8)
                             .addGroup(contentPanelLayout.createParallelGroup()
-                                .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(upThresholdTextField, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                                    .addComponent(label1, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
-                                .addComponent(downThresholdTextField, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(label2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(label4)
-                                .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(intervalTextField, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                                    .addComponent(futurePositionTextField, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-                                    .addComponent(label3, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
-                                .addComponent(orderBtn)
-                                .addComponent(reqOpenOrdersBtn))
+                                .addGroup(contentPanelLayout.createSequentialGroup()
+                                    .addGap(8, 8, 8)
+                                    .addGroup(contentPanelLayout.createParallelGroup()
+                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(upThresholdTextField, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                            .addComponent(label1, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+                                        .addComponent(downThresholdTextField, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(label2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(label4)
+                                        .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(intervalTextField, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                            .addComponent(futurePositionTextField, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                            .addComponent(label3, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
+                                        .addComponent(orderBtn)
+                                        .addComponent(reqOpenOrdersBtn)))
+                                .addGroup(contentPanelLayout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(getHistory)))
                             .addGap(18, 18, 18)
                             .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE))
                 );
@@ -198,7 +218,9 @@ public class vixform2 extends JFrame {
                             .addComponent(orderBtn)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(reqOpenOrdersBtn)
-                            .addGap(0, 66, Short.MAX_VALUE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(getHistory)
+                            .addGap(0, 33, Short.MAX_VALUE))
                         .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
                 );
             }
@@ -265,6 +287,7 @@ public class vixform2 extends JFrame {
     private JTextField intervalTextField;
     private JButton orderBtn;
     private JButton reqOpenOrdersBtn;
+    private JButton getHistory;
     private JPanel buttonBar;
     private JButton updateBtn;
     private JButton startBtn;

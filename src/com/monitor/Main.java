@@ -14,6 +14,7 @@ public class Main {
         ShortStraddleHedge hedge = new ShortStraddleHedge(19, 18, 30, 0, handler);
         ConsoleLogger cLogger = new ConsoleLogger();
         hedge.assignLogger(cLogger);
+        hedge.handler.connect();
 
 
 

@@ -1,24 +1,20 @@
 package com.monitor;
 
-import com.ib.client.Contract;
-import com.ib.client.Order;
-import com.ib.client.OrderState;
+
 
 /**
  * Created by nick on 1/1/15.
  */
+//public void orderStatus(int orderId, String status, int filled, int remaining, double avgFillPrice, int permId, int parentId, double lastFillPrice, int clientId, String whyHeld) {
+
 public class OpenOrder {
     public int        orderId;
-    public Contract   contract;
-    public Order      order;
-    public OrderState state;
+    public String     status;
+    public int        remaining;
 
-    public OpenOrder (int orderId, Contract contract, Order order, OrderState state) {
+    public OpenOrder (int orderId, String status, int remaining) {
         this.orderId = orderId;
-        this.contract = contract;
-        this.state = state;
-        this.order = order;
-
+        this.status = status;
+        this.remaining = remaining;
     }
-
 }

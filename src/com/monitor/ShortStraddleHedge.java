@@ -100,8 +100,6 @@ public class ShortStraddleHedge {
 
                     double lastPrice = handler.getLastPrice();
 
-                    Calendar c = new GregorianCalendar();
-
                     logger.log(counter++ + " price: " + lastPrice +
                             ", m_openOrders.size(): " + handler.getOpenOrderSize() +
                             " ,VIX future position: " + futureLongShort);
@@ -119,7 +117,6 @@ public class ShortStraddleHedge {
 
                                 // clear all pending order then buy, no matter they are sell or buy.
                                 handler.cancelAllOrders();
-                                handler.m_openOrderEnd = false;
                                 buy(1,lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -130,7 +127,6 @@ public class ShortStraddleHedge {
                                 // from below downThreshold to above upThreshold
                                 // TODO: clear all pending order, and then buy
                                 handler.cancelAllOrders();
-                                handler.m_openOrderEnd = false;
                                 buy(2, lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -145,7 +141,6 @@ public class ShortStraddleHedge {
                             if(futureLongShort > 0 && lastPrice < upThreshold - downTolerance) {
 
                                 handler.cancelAllOrders();
-                                handler.m_openOrderEnd = false;
                                 sell(1, lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -153,7 +148,6 @@ public class ShortStraddleHedge {
                             if(futureLongShort < 0 && lastPrice > downThreshold + upTolerance) {
 
                                 handler.cancelAllOrders();
-                                handler.m_openOrderEnd = false;
                                 buy(1, lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -166,7 +160,6 @@ public class ShortStraddleHedge {
                                 // unlikely
 
                                 handler.cancelAllOrders();
-                                handler.m_openOrderEnd = false;
                                 sell(2, lastPrice);
                                 handler.getContractOpenOrders();
                             }
@@ -174,7 +167,6 @@ public class ShortStraddleHedge {
                             if(futureLongShort == 0) {
 
                                 handler.cancelAllOrders();
-                                handler.m_openOrderEnd = false;
                                 sell(1, lastPrice);
 
                                 handler.getContractOpenOrders();
@@ -234,5 +226,9 @@ public class ShortStraddleHedge {
         this.timer.cancel();
 
         this.handler.disConnect();
+    }
+
+    public void getHistory() {
+        this.handler.getHistory();
     }
 }

@@ -7,6 +7,10 @@ package com.monitor;
 
 import com.ib.client.*;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
 import java.util.*;
 
 
@@ -36,11 +40,12 @@ public class ApiHandler implements EWrapper{
 
     ArrayList<OpenOrder> m_openOrders;
 
-    boolean m_openOrderEnd;
-
     public EClientSocket m_socket;
 
     public ShortStraddleHedge hedge;
+
+    BufferedWriter m_bufferWriter;
+
 
     public ApiHandler() {
 
@@ -52,7 +57,7 @@ public class ApiHandler implements EWrapper{
         this.m_accountValue = 0;
         this.m_positions = new ArrayList<Position>();
         this.m_openOrders = new ArrayList<OpenOrder>();
-        this.m_openOrderEnd = true; // flag to signal if we are receiving open order request
+        this.m_bufferWriter = null;
 
 
     }
@@ -70,6 +75,15 @@ public class ApiHandler implements EWrapper{
         this.m_socket.eDisconnect();
 
         this.hedge.logger.log("disConnected...");
+
+        if(this.m_bufferWriter != null) {
+
+            try {
+                this.m_bufferWriter.close();
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
@@ -94,9 +108,7 @@ public class ApiHandler implements EWrapper{
 
     public void getContractOpenOrders () {
         this.m_openOrders.clear();
-        this.m_openOrderEnd = false;
 
-        this.hedge.logger.log("m_openOrderEnd: false ");
         this.m_socket.reqOpenOrders();
     }
 
@@ -134,6 +146,12 @@ public class ApiHandler implements EWrapper{
 
     public int getOpenOrderSize () {
         return m_openOrders.size();
+    }
+
+    public void getHistory () {
+        List<TagValue> XYZ = new ArrayList<TagValue>();
+        this.m_socket.reqHistoricalData(m_reqId++, this.hedge.contract, "20150109 10:10:10", "10 D", "5 mins",
+                "TRADES", 0, 2, XYZ);
     }
 
     // -------------- Connection and Server ------------------- //
@@ -312,10 +330,6 @@ public class ApiHandler implements EWrapper{
 
 
 
-
-
-
-
     // -------------- Orders ------------------- //
 
 
@@ -345,35 +359,30 @@ public class ApiHandler implements EWrapper{
         //                      orderId of 0 that distinguishes them from API orders.
         // whyHeld  String      This field is used to identify an order held when TWS is trying to locate shares for a short sell. The value used to indicate this is 'locate'.
 
-        OpenOrder orderToRemove = null;
-        for(OpenOrder oo: this.m_openOrders ) {
+        if(clientId != this.m_clientId) {
+            // Do not process order from other client
+            return;
+        }
 
-            if (oo.orderId == orderId) {
+        hedge.logger.log("order status called, order ID: " + orderId + " status: " +status);
 
-                if(status.equals("Filled")) {
-                    // complete order processing is done at execute order detail handler
+        if(status.equals("Submitted")) {
+            m_openOrders.add(new OpenOrder(orderId, status, remaining));
+        }
 
-                }
+        if(status.equals("Cancelled")) {
 
-                if(status.equals("Cancelled")) {
-
-//                    m_openOrders.remove(oo);
-                    orderToRemove = oo;
-//                    m_openOrders.iterator().remove();
-                    System.out.println("orderStatus() - order cancelled due to user");
-
-                    System.out.println("m_openOrders.size() is: " + m_openOrders.size());
-
+            OpenOrder targetOrder = null;
+            for(OpenOrder oo: m_openOrders) {
+                if(oo.orderId == orderId) {
+                    targetOrder = oo;
                 }
             }
+
+            if(targetOrder != null) {
+                m_openOrders.remove(targetOrder);
+            }
         }
-
-        if(orderToRemove != null) {
-            m_openOrders.remove(orderToRemove);
-        }
-
-
-
     }
 
     @Override
@@ -385,36 +394,11 @@ public class ApiHandler implements EWrapper{
         // order   Order   The Order class attributes define the details of the order.
         // orderState  OrderState  The orderState attributes include margin and commissions fields for both pre and post trade data.
 
+        hedge.logger.log("openOrder is called");
 
+        // If order is executed immediately after submission, then call reqOpenOrder will not return results.
+        // So you can't relay openOrder return data to maintain client open order status.
 
-        // if same contract, if same if clientId same, then put it into m_openOrders
-
-        if(hedge.contract.m_secType.equals(contract.m_secType) &&
-                hedge.contract.m_symbol.equals(contract.m_symbol) &&
-                (order.m_clientId == this.m_clientId) ) {
-
-            boolean exist = false;
-            for(OpenOrder oo: m_openOrders) {
-                if(oo.orderId == orderId) {
-
-                    exist = true;
-                    System.out.println("order " + orderId + " exists");
-
-
-
-                }
-            }
-
-            if(!exist && orderState.m_status.equals("Submitted")) {
-
-                OpenOrder oo2 = new OpenOrder(orderId, contract, order, orderState);
-
-                this.m_openOrders.add(oo2);
-
-                System.out.println("openOrder() - Open order is added: " + oo2.orderId);
-
-            }
-        }
     }
 
     @Override
@@ -422,10 +406,6 @@ public class ApiHandler implements EWrapper{
     public void openOrderEnd() {
 
         System.out.println("openOrderEnd() - triggered");
-
-        this.m_openOrderEnd = true;
-
-        this.hedge.logger.log("m_openOrderEnd: true");
 
     }
 
@@ -678,74 +658,45 @@ public class ApiHandler implements EWrapper{
         //             This structure contains a full description of the contract that was executed.
         // execution   Execution   This structure contains addition order execution details.
 
-        Calendar c = new GregorianCalendar();
+        this.hedge.logger.log("execDetails() - order is all filled");
 
-        this.hedge.logger.log("execDetails() - some order is executed");
+        hedge.logger.log("execDetails() - m_openOrders.size(): " + m_openOrders.size());
 
-        Timer timer1 = new Timer();
+        OpenOrder orderToRemove = null;
 
-        class UpdateExecDetailTask extends TimerTask {
+        for(OpenOrder oo: m_openOrders) {
 
-            Timer timer;
-            Execution execution;
-            public UpdateExecDetailTask(Timer timer, Execution execution) {
-                this.timer = timer;
-                this.execution = execution;
-            }
-            @Override
-            public void run() {
-                // TODO: run task
-                if(m_openOrderEnd == true) {
+            if(execution.m_orderId == oo.orderId) {
 
-                    OpenOrder orderToRemove = null;
+                hedge.logger.log("execDetails() - order found in m_openOrders");
 
-                    for(OpenOrder oo: m_openOrders) {
+                if(execution.m_side.equals("BOT") ) {
+                    // update position
+                    hedge.futureLongShort =  hedge.futureLongShort + execution.m_shares;
 
-                        if(execution.m_orderId == oo.orderId) {
+                    orderToRemove = oo;
 
-                            hedge.logger.log("execDetails() - order found in m_openOrders");
-
-                            if(execution.m_side.equals("BOT") ) {
-
-                                hedge.futureLongShort =  hedge.futureLongShort + execution.m_shares;
-
-                                hedge.logger.log("execDetails() - buy Order Filled");
-                            }
-
-                            if(execution.m_side.equals("SLD")) {
-
-                                hedge.futureLongShort =  hedge.futureLongShort - execution.m_shares;
-
-                                hedge.logger.log("execDetails() - sell Order Filled");
-
-                            }
-                        }
-
-                        oo.order.m_totalQuantity = oo.order.m_totalQuantity - execution.m_shares;
-
-                        if(oo.order.m_totalQuantity == 0) {
-
-                            orderToRemove = oo;
-                        }
-                    }
-
-                    if(orderToRemove != null) {
-
-                        m_openOrders.remove(orderToRemove);
-
-                        hedge.logger.log("execDetails() - filled Order removed ");
-                    }
-
-                    this.timer.cancel();
+                    hedge.logger.log("execDetails() - buy Order Filled, ID: " + execution.m_orderId);
                 }
 
+                if(execution.m_side.equals("SLD")) {
+                    // update position
+                    hedge.futureLongShort =  hedge.futureLongShort - execution.m_shares;
 
+                    orderToRemove = oo;
+
+                    hedge.logger.log("execDetails() - sell Order Filled, ID: " + execution.m_orderId);
+                }
             }
         }
 
-        TimerTask updateTask = new UpdateExecDetailTask(timer1, execution);
-        timer1.schedule(updateTask,0, 200);
+        if(orderToRemove != null) {
 
+            m_openOrders.remove(orderToRemove);
+
+            hedge.logger.log("execDetails() - filled Order removed, ID: " + orderToRemove.orderId );
+
+        }
     }
 
     @Override
@@ -802,8 +753,44 @@ public class ApiHandler implements EWrapper{
         // WAP          double      The weighted average price during the time covered by the bar.
         // hasGaps      boolean     Whether or not there are gaps in the data.
 
+        if (this.m_bufferWriter == null ) {
+            // create writer
+            try {
 
-        throw new UnsupportedOperationException("historicalData - Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                String content = date + ",";
+                content = content + close + "\n";
+                File file = new File("/Users/nick/documents/testFile.txt");
+
+                FileWriter fw = new FileWriter(file.getAbsoluteFile() );
+                this.m_bufferWriter = new BufferedWriter(fw);
+                this.m_bufferWriter.write(content);
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+        } else {
+            // write
+            try {
+
+                String content = date + ",";
+                content = content + close + "\n";
+                this.m_bufferWriter.write(content);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        this.hedge.logger.log(date);
+        this.hedge.logger.log("close: " + close);
+        this.hedge.logger.log("open: " + open);
+        this.hedge.logger.log("high: " + high);
+        this.hedge.logger.log("low: " + low);
+
+
+
+
     }
 
 
