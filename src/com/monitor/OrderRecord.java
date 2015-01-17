@@ -13,6 +13,7 @@ public class OrderRecord {
     public OrderRecord(int futureLongShort, double price) {
         this.futureLongShort = futureLongShort;
         this.price = price;
+        this.profitLoss = 0;
 
     }
 }

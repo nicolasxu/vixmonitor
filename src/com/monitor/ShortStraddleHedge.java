@@ -4,8 +4,6 @@ package com.monitor;
 import com.ib.client.Contract;
 import com.ib.client.Order;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -26,6 +24,8 @@ public class ShortStraddleHedge {
 
     public Contract contract;
     public Timer timer;
+
+    public int hedgePositionSize = 1;
 
     public ILogger logger;
 
@@ -83,27 +83,29 @@ public class ShortStraddleHedge {
 
         this.handler.connect();
 
-        // 1. buid the TimerTask
+        // 1. build the TimerTask
         class DynamicHedgeTask extends TimerTask {
             int counter = 0;
-            boolean receivingPriceFlag = false;
+            boolean receivingPriceCalled = false;
             public void run(){
 
 
                 if(handler.getNextValidOrderId() > 0) {
                     // we are connected
 
-                    if(receivingPriceFlag == false ) {
+                    handler.updateFutureLongShort();
+
+                    if(receivingPriceCalled == false ) {
                         handler.startReceivingPrice(contract);
-                        receivingPriceFlag = true;
+                        receivingPriceCalled = true;
                     }
 
                     double lastPrice = handler.getLastPrice();
 
                     logger.log(counter++ + " price: " + lastPrice +
-                            ", m_openOrders.size(): " + handler.getOpenOrderSize() +
                             " ,VIX future position: " + futureLongShort);
 
+                    handler.outPutSentOrderStatus();
 
                     if(lastPrice > 0) {
 
@@ -116,9 +118,8 @@ public class ShortStraddleHedge {
                             if(futureLongShort == 0) {
 
                                 // clear all pending order then buy, no matter they are sell or buy.
-                                handler.cancelAllOrders();
+                                handler.cancelUnfilledOrders();
                                 buy(1,lastPrice);
-                                handler.getContractOpenOrders();
                             }
 
                             if(futureLongShort < 0) {
@@ -126,9 +127,8 @@ public class ShortStraddleHedge {
                                 // unlikely, but it can happen when price jumps suddenly within interval
                                 // from below downThreshold to above upThreshold
                                 // TODO: clear all pending order, and then buy
-                                handler.cancelAllOrders();
+                                handler.cancelUnfilledOrders();
                                 buy(2, lastPrice);
-                                handler.getContractOpenOrders();
                             }
                         }
 
@@ -140,16 +140,14 @@ public class ShortStraddleHedge {
 
                             if(futureLongShort > 0 && lastPrice < upThreshold - downTolerance) {
 
-                                handler.cancelAllOrders();
+                                handler.cancelUnfilledOrders();
                                 sell(1, lastPrice);
-                                handler.getContractOpenOrders();
                             }
 
                             if(futureLongShort < 0 && lastPrice > downThreshold + upTolerance) {
 
-                                handler.cancelAllOrders();
+                                handler.cancelUnfilledOrders();
                                 buy(1, lastPrice);
-                                handler.getContractOpenOrders();
                             }
 
                         }
@@ -159,17 +157,17 @@ public class ShortStraddleHedge {
                             if(futureLongShort > 0) {
                                 // unlikely
 
-                                handler.cancelAllOrders();
+                                handler.cancelUnfilledOrders();
                                 sell(2, lastPrice);
-                                handler.getContractOpenOrders();
+
                             }
 
                             if(futureLongShort == 0) {
 
-                                handler.cancelAllOrders();
+                                handler.cancelUnfilledOrders();
                                 sell(1, lastPrice);
 
-                                handler.getContractOpenOrders();
+
                             }
 
                             if(futureLongShort < 0) {

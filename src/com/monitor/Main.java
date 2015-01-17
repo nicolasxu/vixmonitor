@@ -8,13 +8,14 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-//        JFrame mainFrame = new vixform2();
+        JFrame mainFrame = new vixform2();
 
-        ApiHandler handler = new TestHandler();
-        ShortStraddleHedge hedge = new ShortStraddleHedge(19, 18, 30, 0, handler);
-        ConsoleLogger cLogger = new ConsoleLogger();
-        hedge.assignLogger(cLogger);
-        hedge.handler.connect();
+//        ApiHandler testHandler = new TestHandler();
+//        ShortStraddleHedge hedge = new ShortStraddleHedge(21, 13, 30, 0, testHandler);
+//        ConsoleLogger cLogger = new ConsoleLogger();
+//        hedge.assignLogger(cLogger);
+//        hedge.handler.connect();
+//        hedge.startHedge();
 
 
 

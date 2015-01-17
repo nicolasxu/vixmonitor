@@ -3,9 +3,7 @@ package com.monitor;
 import com.ib.client.Contract;
 import com.ib.client.Order;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
@@ -40,6 +38,7 @@ public class TestHandler extends ApiHandler{
         m_fileName = "/Users/nick/documents/testFile.txt";
     }
 
+    @Override
     public void connect() {
 
         // TODO: implement file loading
@@ -68,16 +67,17 @@ public class TestHandler extends ApiHandler{
 
     }
 
-
+    @Override
     public int getNextValidOrderId () {
         return m_simNextValidOrderId;
     }
 
+    @Override
     public int placeOrder (Contract contract, Order order) {
 
         hedge.logger.log("placeOrder() - sim order placed");
 
-        // just complete the order
+        // just place and complete the order, no interaction with server
         if(order.m_action.equals("BUY")) {
 
             hedge.futureLongShort++;
@@ -97,45 +97,87 @@ public class TestHandler extends ApiHandler{
         return this.m_simNextValidOrderId++;
     }
 
-    public int getOpenOrderSize () {
-        return 0;
-    }
 
+    @Override
     public void startReceivingPrice(Contract contract) {
         Integer p = 10;
         p++;
     }
 
+    @Override
     public double getLastPrice() {
 
-        return m_prices.get(priceIndex++).price;
+        if (priceIndex < m_prices.size()) {
+
+            return m_prices.get(priceIndex++).price;
+
+        } else {
+            this.disConnect();
+            return 0;
+        }
     }
 
 
-
-    public void cancelAllOrders () {
+    @Override
+    public void cancelUnfilledOrders() {
         int p = 10;
         p++;
     }
-    public void getContractOpenOrders () {
 
-    }
-
+    @Override
     public void disConnect () {
+
         hedge.logger.log("disConnect() - sim handler disConnected");
+
+        this.hedge.timer.cancel();
+
+        for(OrderRecord record: m_orderRecords) {
+            hedge.logger.log("position: " + record.futureLongShort + " price: " + record.price);
+        }
+        // Write the result file
+        String outputFileName = "/Users/nick/documents/output.txt";
+
+        // Calculate P&L
+        for(int i = 0; i < m_orderRecords.size(); i ++) {
+            if(m_orderRecords.get(i).futureLongShort == 0) {
+                m_orderRecords.get(i).profitLoss = (m_orderRecords.get(i-1).futureLongShort - m_orderRecords.get(i).futureLongShort) *
+                        (m_orderRecords.get(i).price - m_orderRecords.get(i-1).price);
+            }
+        }
+
+        try {
+            FileWriter fw = new FileWriter(outputFileName);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+            for(OrderRecord record: m_orderRecords) {
+                bw.write("position: " + record.futureLongShort + ", price: " + record.price +
+                        (record.profitLoss != 0 ? " P&L: " + record.profitLoss : "") + "\n");
+            }
+
+            bw.close();
+
+        }
+        catch (IOException e) {
+
+            e.printStackTrace();
+        }
+
     }
 
+    @Override
+    public void getHistory () {
+        hedge.logger.log("getHistory() overwride - do nothing");
+    }
 
-
-        //     this.handler.getHedgeRef(this);  // no need to change
+    //     this.handler.getHedgeRef(this);  // no need to change
 
     //         handler.getNextValidOrderId()                done
     //         handler.placeOrder(this.contract, buyOrder); done
-    //         handler.getOpenOrderSize()                   done
+    //         handler.getSentOrderSize()                   done
     //         handler.startReceivingPrice(contract);       done
     //         lastPrice = handler.getLastPrice();          done
 
-    //         handler.cancelAllOrders();                   done
+    //         handler.cancelUnfilledOrders();                   done
     //         handler.m_openOrderEnd = false;              done
     //         handler.getContractOpenOrders();             done
     //         this.handler.disConnect();                   done

@@ -38,14 +38,13 @@ public class ApiHandler implements EWrapper{
 
     ArrayList<Position> m_positions;
 
-    ArrayList<OpenOrder> m_openOrders;
+    HashMap<Integer, SentOrder> m_sentOrders;
 
     public EClientSocket m_socket;
 
     public ShortStraddleHedge hedge;
 
     BufferedWriter m_bufferWriter;
-
 
     public ApiHandler() {
 
@@ -56,9 +55,44 @@ public class ApiHandler implements EWrapper{
         this.m_lastPrice = 0; // if m_lastPrice > 0, then we can use the price for calculation.
         this.m_accountValue = 0;
         this.m_positions = new ArrayList<Position>();
-        this.m_openOrders = new ArrayList<OpenOrder>();
+        this.m_sentOrders = new HashMap<Integer, SentOrder>();
         this.m_bufferWriter = null;
 
+
+
+    }
+
+    public void updateFutureLongShort() {
+
+        this.hedge.logger.log("updateFutureLongShort() - triggered");
+
+        for (Iterator<Integer> it = m_sentOrders.keySet().iterator(); it.hasNext();) {
+            int orderId = it.next();
+            this.hedge.logger.log("updateFutureLongShort() - iterating order: " + orderId);
+
+            SentOrder so = m_sentOrders.get(orderId);
+
+            if(so.counted == false && so.status.equals("Filled")) {
+                // not all counted
+                this.hedge.logger.log("updateFutureLongShort() - not counted && \"Filled\"");
+
+                int filledNum = so.order.m_totalQuantity - so.remaining;
+
+                if(so.order.m_action.equals("BUY")) {
+                    // buy
+                    this.hedge.futureLongShort =  this.hedge.futureLongShort + filledNum;
+                } else {
+                    // sell
+                    this.hedge.futureLongShort = this.hedge.futureLongShort - filledNum;
+                }
+
+                if( filledNum == hedge.hedgePositionSize ) {
+                    // order is all filled
+                    so.counted = true;
+
+                }
+            }
+        }
 
     }
     public void getHedgeRef (ShortStraddleHedge hedge) {
@@ -87,6 +121,14 @@ public class ApiHandler implements EWrapper{
 
     }
 
+    public void outPutSentOrderStatus() {
+        for(Iterator<Integer> it = m_sentOrders.keySet().iterator(); it.hasNext();) {
+            int orderId = it.next();
+            SentOrder so = m_sentOrders.get(orderId);
+            hedge.logger.log("ID: " + orderId + " Status: "+ so.status +" Action: "+ so.order.m_action + " TotalQuantity: " + so.order.m_totalQuantity +
+            " remaining: " + so.remaining);
+        }
+    }
 
     public void startReceivingPrice(Contract contract) {
 
@@ -106,12 +148,6 @@ public class ApiHandler implements EWrapper{
 
     }
 
-    public void getContractOpenOrders () {
-        this.m_openOrders.clear();
-
-        this.m_socket.reqOpenOrders();
-    }
-
     public int getNextValidOrderId () {
         return this.m_nextValidOrderId;
     }
@@ -125,32 +161,48 @@ public class ApiHandler implements EWrapper{
 
         this.m_socket.placeOrder(this.m_nextValidOrderId, contract, order);
 
-        String output = "order placed: " + order.m_action;
+        String output = "order placed: " + "# " + this.m_nextValidOrderId +" "+ order.m_action;
 
         output = output + " " + order.m_totalQuantity;
         output = output + " " + contract.m_localSymbol;
         output = output + " " + contract.m_expiry;
 
         this.hedge.logger.log(output);
+        SentOrder oo = new SentOrder( order, "Submitted", order.m_totalQuantity);
+        this.m_sentOrders.put(this.m_nextValidOrderId, oo);
+
+        this.hedge.logger.log("placeOrder() - this.m_sentOrders.size(): " + this.m_sentOrders.size());
 
         return this.m_nextValidOrderId++;
 
     }
 
-    public void cancelAllOrders () {
-        for(OpenOrder oo: m_openOrders) {
-            this.m_socket.cancelOrder(oo.orderId);
-        }
-        m_openOrders.clear();
-    }
+    public void cancelUnfilledOrders() {
 
-    public int getOpenOrderSize () {
-        return m_openOrders.size();
+        for(Integer orderId: m_sentOrders.keySet()) {
+
+            if(m_sentOrders.get(orderId).remaining != 0) {
+
+                this.m_socket.cancelOrder(orderId);
+            }
+        }
     }
 
     public void getHistory () {
+
+        Contract oldContract = new Contract();
+
+        oldContract.m_symbol = "VIX";
+        oldContract.m_secType = "FUT";
+        oldContract.m_expiry = "20141217";
+        oldContract.m_localSymbol = "VXZ4";
+        oldContract.m_exchange = "CFE";
+        oldContract.m_currency = "USD";
+        oldContract.m_multiplier = "1000";
+        oldContract.m_tradingClass = "VX";
+
         List<TagValue> XYZ = new ArrayList<TagValue>();
-        this.m_socket.reqHistoricalData(m_reqId++, this.hedge.contract, "20150109 10:10:10", "10 D", "5 mins",
+        this.m_socket.reqHistoricalData(m_reqId++, this.hedge.contract, "20141217 10:10:10", "30 D", "30 mins",
                 "TRADES", 0, 2, XYZ);
     }
 
@@ -359,29 +411,25 @@ public class ApiHandler implements EWrapper{
         //                      orderId of 0 that distinguishes them from API orders.
         // whyHeld  String      This field is used to identify an order held when TWS is trying to locate shares for a short sell. The value used to indicate this is 'locate'.
 
+        hedge.logger.log("order status called, order ID: " + orderId + " status: " +status + " filled: " + filled + " remaining: " + remaining);
+
         if(clientId != this.m_clientId) {
             // Do not process order from other client
             return;
         }
 
-        hedge.logger.log("order status called, order ID: " + orderId + " status: " +status);
+        if(!m_sentOrders.containsKey(orderId)) {
+            // sentOrders is added by placeOrder. If it is not there, then this order is not created by this api client.
+            // Let's ignore this type of order.
 
-        if(status.equals("Submitted")) {
-            m_openOrders.add(new OpenOrder(orderId, status, remaining));
+            return;
         }
 
-        if(status.equals("Cancelled")) {
+        m_sentOrders.get(orderId).status = status;
 
-            OpenOrder targetOrder = null;
-            for(OpenOrder oo: m_openOrders) {
-                if(oo.orderId == orderId) {
-                    targetOrder = oo;
-                }
-            }
+        if(status.equals("Filled")) {
 
-            if(targetOrder != null) {
-                m_openOrders.remove(targetOrder);
-            }
+            m_sentOrders.get(orderId).remaining = remaining;
         }
     }
 
@@ -419,7 +467,6 @@ public class ApiHandler implements EWrapper{
         System.out.println("nextValidId() - next available orderId is: " + orderId);
         this.m_nextValidOrderId = orderId;
         this.getPositions();
-        this.getContractOpenOrders();
 
 
 
@@ -658,45 +705,7 @@ public class ApiHandler implements EWrapper{
         //             This structure contains a full description of the contract that was executed.
         // execution   Execution   This structure contains addition order execution details.
 
-        this.hedge.logger.log("execDetails() - order is all filled");
 
-        hedge.logger.log("execDetails() - m_openOrders.size(): " + m_openOrders.size());
-
-        OpenOrder orderToRemove = null;
-
-        for(OpenOrder oo: m_openOrders) {
-
-            if(execution.m_orderId == oo.orderId) {
-
-                hedge.logger.log("execDetails() - order found in m_openOrders");
-
-                if(execution.m_side.equals("BOT") ) {
-                    // update position
-                    hedge.futureLongShort =  hedge.futureLongShort + execution.m_shares;
-
-                    orderToRemove = oo;
-
-                    hedge.logger.log("execDetails() - buy Order Filled, ID: " + execution.m_orderId);
-                }
-
-                if(execution.m_side.equals("SLD")) {
-                    // update position
-                    hedge.futureLongShort =  hedge.futureLongShort - execution.m_shares;
-
-                    orderToRemove = oo;
-
-                    hedge.logger.log("execDetails() - sell Order Filled, ID: " + execution.m_orderId);
-                }
-            }
-        }
-
-        if(orderToRemove != null) {
-
-            m_openOrders.remove(orderToRemove);
-
-            hedge.logger.log("execDetails() - filled Order removed, ID: " + orderToRemove.orderId );
-
-        }
     }
 
     @Override
