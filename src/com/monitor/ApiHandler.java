@@ -46,6 +46,8 @@ public class ApiHandler implements EWrapper{
 
     BufferedWriter m_bufferWriter;
 
+    int m_placedOrderQuantity;
+
     public ApiHandler() {
 
         this.m_clientId = 123;
@@ -57,6 +59,7 @@ public class ApiHandler implements EWrapper{
         this.m_positions = new ArrayList<Position>();
         this.m_sentOrders = new HashMap<Integer, SentOrder>();
         this.m_bufferWriter = null;
+        this.m_placedOrderQuantity = 0;
 
 
 
@@ -81,14 +84,19 @@ public class ApiHandler implements EWrapper{
                 if(so.order.m_action.equals("BUY")) {
                     // buy
                     this.hedge.futureLongShort =  this.hedge.futureLongShort + filledNum;
+                    this.hedge.logger.log("updateFutureLongShort() - futureLongShort position updated to " + this.hedge.futureLongShort);
+
                 } else {
                     // sell
                     this.hedge.futureLongShort = this.hedge.futureLongShort - filledNum;
+                    this.hedge.logger.log("updateFutureLongShort() - futureLongShort position updated to " + this.hedge.futureLongShort);
+                    
                 }
 
-                if( filledNum == hedge.hedgePositionSize ) {
+                if( filledNum == this.m_placedOrderQuantity ) {
                     // order is all filled
                     so.counted = true;
+                    this.m_placedOrderQuantity = 0;
 
                 }
             }
@@ -101,7 +109,9 @@ public class ApiHandler implements EWrapper{
 
     public void connect() {
 
+//        this.m_socket.eConnect(null, 4001, this.m_clientId); // for IB gateway
         this.m_socket.eConnect(null, 7496, this.m_clientId);
+
     }
 
     public void disConnect () {
@@ -125,7 +135,7 @@ public class ApiHandler implements EWrapper{
         for(Iterator<Integer> it = m_sentOrders.keySet().iterator(); it.hasNext();) {
             int orderId = it.next();
             SentOrder so = m_sentOrders.get(orderId);
-            hedge.logger.log("ID: " + orderId + " Status: "+ so.status +" Action: "+ so.order.m_action + " TotalQuantity: " + so.order.m_totalQuantity +
+            hedge.logger.log("outPutSentOrderStatus(): " + "ID: " + orderId + " Status: "+ so.status +" Action: "+ so.order.m_action + " TotalQuantity: " + so.order.m_totalQuantity +
             " remaining: " + so.remaining);
         }
     }
@@ -171,6 +181,7 @@ public class ApiHandler implements EWrapper{
         SentOrder oo = new SentOrder( order, "Submitted", order.m_totalQuantity);
         this.m_sentOrders.put(this.m_nextValidOrderId, oo);
 
+        this.m_placedOrderQuantity = order.m_totalQuantity;
         this.hedge.logger.log("placeOrder() - this.m_sentOrders.size(): " + this.m_sentOrders.size());
 
         return this.m_nextValidOrderId++;
@@ -178,6 +189,8 @@ public class ApiHandler implements EWrapper{
     }
 
     public void cancelUnfilledOrders() {
+
+        this.m_placedOrderQuantity = 0;
 
         for(Integer orderId: m_sentOrders.keySet()) {
 
